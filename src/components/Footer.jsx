@@ -1,4 +1,4 @@
-import { Instagram, Telegram, Phone } from "lucide-react";
+import { Instagram, MessageCircle, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
                 href="#"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
-                <Telegram className="w-6 h-6 text-primary" />
+                <MessageCircle className="w-6 h-6 text-primary" />
               </a>
               <a
                 href="#"
