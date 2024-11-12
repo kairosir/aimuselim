@@ -1,55 +1,93 @@
-import Hero from "../components/Hero";
-import ProductCard from "../components/ProductCard";
-import Gallery from "../components/Gallery";
-import Reviews from "../components/Reviews";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Товар 1",
-      price: "1999",
-      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843"
-    },
-    {
-      id: 2,
-      name: "Товар 2",
-      price: "2999",
-      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e"
-    },
-    {
-      id: 3,
-      name: "Товар 3",
-      price: "3999",
-      image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Hero />
       
-      <section className="py-16 container mx-auto px-4">
-        <motion.h2 
-          className="text-4xl font-bold text-center mb-12 gradient-text"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Популярные товары
-        </motion.h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+      <section id="photography" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-4xl font-bold mb-6 gradient-text">Видеосъемка</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Профессиональная видеосъемка для ваших проектов. Создаем качественный контент
+              для любых целей - от личных до коммерческих.
+            </p>
+            <Link to="/photography">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary hover:bg-primary/90 group"
+              >
+                Заказать
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      <Gallery />
-      <Reviews />
+      <section id="english" className="py-16 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-4xl font-bold mb-6 gradient-text">Английский язык</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Эффективное обучение английскому языку с индивидуальным подходом.
+              Современные методики и опытные преподаватели.
+            </p>
+            <Link to="/english">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary hover:bg-primary/90 group"
+              >
+                Записаться
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="shop" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-4xl font-bold mb-6 gradient-text">Магазин</h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Уникальные товары с нашей тщательно подобранной коллекцией.
+              Качество и стиль для наших клиентов.
+            </p>
+            <Link to="/shop">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary hover:bg-primary/90 group"
+              >
+                Купить
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

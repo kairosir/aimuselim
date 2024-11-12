@@ -7,6 +7,13 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { LoginForm } from "./LoginForm";
 
 const Navigation = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -15,17 +22,29 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          <Link to="/" className="text-2xl font-bold gradient-text">
+            Logo
+          </Link>
+
           <nav className="flex items-center space-x-8">
-            {navItems.slice(0, -1).map(({ title, to, icon }) => (
-              <Link
-                key={to}
-                to={to}
-                className="nav-link flex items-center space-x-2 text-sm font-medium"
-              >
-                {icon}
-                <span>{title}</span>
-              </Link>
-            ))}
+            <button
+              onClick={() => scrollToSection('photography')}
+              className="nav-link flex items-center space-x-2 text-sm font-medium"
+            >
+              Видеосъемка
+            </button>
+            <button
+              onClick={() => scrollToSection('english')}
+              className="nav-link flex items-center space-x-2 text-sm font-medium"
+            >
+              Английский язык
+            </button>
+            <button
+              onClick={() => scrollToSection('shop')}
+              className="nav-link flex items-center space-x-2 text-sm font-medium"
+            >
+              Магазин
+            </button>
           </nav>
           
           <Dialog>

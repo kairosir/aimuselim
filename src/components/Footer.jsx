@@ -16,19 +16,23 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Свяжитесь с нами</h4>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 <Instagram className="w-6 h-6 text-primary" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/your-number"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 <MessageCircle className="w-6 h-6 text-primary" />
               </a>
               <a
-                href="#"
+                href="tel:your-number"
                 className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 <Phone className="w-6 h-6 text-primary" />
