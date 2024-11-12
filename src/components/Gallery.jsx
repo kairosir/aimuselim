@@ -20,9 +20,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-4 py-16">
-      <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Галерея</h2>
-      
+    <div className="relative w-full max-w-6xl mx-auto px-4">
       <div className="relative aspect-video rounded-lg overflow-hidden">
         <motion.img
           key={currentIndex}
