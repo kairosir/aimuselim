@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const Reviews = () => {
   const reviews = [
@@ -7,19 +7,22 @@ const Reviews = () => {
       id: 1,
       name: "Анна М.",
       rating: 5,
-      text: "Отличный магазин! Быстрая доставка и качественные товары.",
+      text: "Отличный магазин! Быстрая доставка и качественные товары. Очень довольна покупками и обслуживанием.",
+      type: "Магазин"
     },
     {
       id: 2,
       name: "Петр К.",
       rating: 5,
-      text: "Всё супер! Обязательно буду заказывать ещё.",
+      text: "Профессиональная видеосъемка на высшем уровне. Результат превзошел все ожидания!",
+      type: "Видеосъемка"
     },
     {
       id: 3,
       name: "Мария С.",
-      rating: 4,
-      text: "Хороший выбор товаров и приятные цены.",
+      rating: 5,
+      text: "Замечательные уроки английского. Преподаватель находит подход к каждому ученику.",
+      type: "Английский"
     },
   ];
 
@@ -38,8 +41,9 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-md card-hover"
+              className="bg-white p-6 rounded-lg shadow-md card-hover relative"
             >
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <span className="text-primary font-semibold">
@@ -58,7 +62,8 @@ const Reviews = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-600">{review.text}</p>
+              <p className="text-gray-600 mb-2">{review.text}</p>
+              <span className="text-sm text-primary font-medium">{review.type}</span>
             </motion.div>
           ))}
         </div>

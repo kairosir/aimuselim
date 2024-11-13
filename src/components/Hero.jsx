@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
+  const scrollToContent = () => {
+    const contentSection = document.getElementById('photography');
+    contentSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-secondary/10">
       <motion.div
@@ -20,26 +24,23 @@ const Hero = () => {
           Добро пожаловать
         </motion.h1>
         <motion.p 
-          className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto"
+          className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Откройте для себя уникальные товары с нашей тщательно подобранной коллекцией
+          Откройте для себя мир новых возможностей с нашими услугами
         </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+        
+        <motion.button
+          onClick={scrollToContent}
+          className="animate-bounce mt-8 p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
         >
-          <Button 
-            size="lg" 
-            className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg group"
-          >
-            Начать покупки
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
+          <ArrowDown className="w-6 h-6 text-primary" />
+        </motion.button>
       </motion.div>
       
       <div className="absolute -z-10 w-full h-full">
