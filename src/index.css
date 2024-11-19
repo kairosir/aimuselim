@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 33% 98%;
+    --foreground: 24 15% 11%;
+    --border: 24 15% 85%;
+    --input: 24 15% 85%;
+    --ring: 24 15% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-center leading-tight;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-playfair font-semibold mb-6;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:opacity-90 transition-opacity;
+  }
+
+  .nav-link {
+    @apply text-foreground/80 hover:text-foreground transition-colors;
+  }
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
